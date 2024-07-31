@@ -33,11 +33,11 @@ pipeline {
         }
 
         stage('createImage') {
-        steps { echo "Creating Dockerfile..."' }
-        steps { echo "FROM ubuntu:bionic" > Dockerfile'}
-        steps { echo "ENV MYSQL_HOST=DB_Server" >> Dockerfile' }
-        steps { echo "ENV MYSQL_PASSWORD=5TTnvuTDJJSq6" >> Dockerfile' }
-        steps { echo "LABEL description=Test_Twistlock_Jenkins_Plugin" >> Dockerfile' }
+        steps { echo 'Creating Dockerfile...' }
+        steps { echo 'FROM ubuntu:bionic" > Dockerfile'}
+        steps { echo 'ENV MYSQL_HOST=DB_Server" >> Dockerfile' }
+        steps { echo 'ENV MYSQL_PASSWORD=5TTnvuTDJJSq6" >> Dockerfile' }
+        steps { echo 'LABEL description=Test_Twistlock_Jenkins_Plugin" >> Dockerfile' }
         steps { docker build --no-cache -t dev/my-ubuntu:$BUILD_NUMBER .'}
     }
     stage('twistlockScan') {
